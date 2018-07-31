@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  mariadb:
+    build: ./mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=mongs 
+  redis:
+    build: ./redis
+  php-apache:
+    build: ./php-apache
+    volumes:
+      - /opt/Bird:/var/www/html
+    ports:
+      - '80:80'
