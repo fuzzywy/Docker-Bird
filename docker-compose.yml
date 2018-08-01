@@ -1,13 +1,19 @@
-version: '3.7'
+version: '3'
 services:
   mariadb:
     build: ./mariadb
+    image: mariadb/genius
+    container_name: mariadb
     environment:
       - MYSQL_ROOT_PASSWORD=mongs 
   redis:
     build: ./redis
+    image: redis/genius
+    container_name: redis
   php-apache:
     build: ./php-apache
+    image: php-apache/genius
+    container_name: php-apache
     volumes:
       - /opt/Bird:/var/www/html
     ports:
