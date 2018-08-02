@@ -18,3 +18,7 @@ services:
       - /opt/Bird:/var/www/html
     ports:
       - '80:80'
+  node:
+    build: ./node
+    image: node/bird
+    container_name: node
