@@ -1,0 +1,1 @@
+FROM 7.2.8-fpm-stretch
