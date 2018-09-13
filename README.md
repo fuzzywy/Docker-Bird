@@ -36,7 +36,7 @@ e.g.: default docker path:`/data/gdata/docker`, insecure-registries: `47.99.129.
 `vim /etc/docker/daemon.json` If the file doesn't exist,create it.
 
       {
-        "graph": "/data/gdata/docker"
+        "graph": "/data/gdata/docker",
         "insecure-registries": [
           "47.99.129.128:5000"
         ]
@@ -55,8 +55,8 @@ e.g.: default docker path:`/data/gdata/docker`, insecure-registries: `47.99.129.
 * transfer the image(.tar) to the server
 
 * load the image to docker
-
-* docker load < xxxx.tar
+      
+      docker load < xxxx.tar
 
 
 # Docker-compose install guide
