@@ -1,8 +1,4 @@
 #!/bin/bash
-
-docker run --name php-apache -p 80:80 -d php-apache/genius
-echo "start php-apache...ok"
-
 echo "wait for 10 seconds to initialize the database..."
 docker run --name mariadb -p 13306:3306 -e MYSQL_ROOT_PASSWORD=mongs -e TZ='Asia/Shanghai' -d mariadb/genius
 

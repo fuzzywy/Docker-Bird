@@ -16,15 +16,7 @@ docker run -v /opt/Bird:/app --rm $composer composer install
 
 docker run -v /opt/Bird:/home/node/app --rm -w /home/node/app $node npm install
 
-docker run -v /opt/Bird:/home/node/app --rm -w /home/node/app $node npm i bootstrap-vue
-
-docker run -v /opt/Bird:/home/node/app --rm -w /home/node/app $node npm i vue-highcharts -S
-
-docker run -v /opt/Bird:/home/node/app --rm -w /home/node/app $node npm install --save highcharts
-
-docker run -v /opt/Bird:/home/node/app --rm -w /home/node/app $node npm install vue-router
-
-docker run -v /opt/Bird:/home/node/app --rm -w /home/node/app $node npm install vuex --save-dev
+docker run -v /opt/Bird:/home/node/app --rm -w /home/node/app $node npm run production
 
 docker-compose up -d
 
