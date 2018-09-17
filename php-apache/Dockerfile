@@ -2,6 +2,8 @@ FROM php:7.2.8-apache-stretch
 
 COPY ./conf/php.ini-development /usr/local/etc/php/php.ini
 
+COPY config/rewrite.load /etc/apache2/mods-enabled/rewrite.load
+
 RUN apt-get update \
 	&& apt-get install -y \
         freetds-bin \
