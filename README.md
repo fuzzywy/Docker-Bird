@@ -30,7 +30,7 @@ e.g.: default docker path:`/data/gdata/docker`, insecure-registries: `47.99.129.
 * centos6 in this way:
      
       vi /etc/sysconfig/docker
-      other_args="--graph=/data/gdata/docker --insecure-registries=47.99.129.128:5000"
+      other_args="--graph=/data/gdata/docker --insecure-registry=47.99.129.128:5000"
 
 * centos7 in this way:<br>
 `vim /etc/docker/daemon.json` If the file doesn't exist,create it.
