@@ -4,7 +4,9 @@ pipeline {
 
     stages {
         stage('Build') {
-            sh 'build/install(for development).sh'
+            steps {
+                sh 'build/install(for development).sh'
+            }
         }
         stage('Test') {
             steps {
