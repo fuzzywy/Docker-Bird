@@ -4,7 +4,7 @@ composer=composer
 
 git clone https://github.com/fuzzywy/Bird.git
 
-docker-compose build
+/usr/local/bin/docker-compose build
 
 docker pull $composer
 
