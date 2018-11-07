@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'chmod +x build/build.sh'
-                sh 'build/build.sh'
+                sh 'chmod +x build/build-product.sh'
+                sh 'build/build-product.sh'
             }
         }
         stage('Test') {
