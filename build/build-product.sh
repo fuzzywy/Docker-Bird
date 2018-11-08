@@ -38,4 +38,12 @@ cd Bird && docker cp . php-apache:/var/www/html
 # Commit container to image
 docker commit php-apache php-apache/genius
 
+# Stop container
+docker-compose stop
+
+# Remove src dir
+rm -rf Bird
+
+# Push image to reigstry
+
 # Push image to docker registry
