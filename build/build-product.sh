@@ -4,20 +4,21 @@ composer=composer
 
 git clone https://github.com/fuzzywy/Bird.git
 
-/usr/local/bin/docker-compose build
+docker-compose build
 
 docker pull $composer
 
 docker pull $node
 
 # Build Bird project
-docker run -v ../Bird:/app --rm $composer composer install
+
+cd ../ && docker run -v Bird:/app --rm $composer composer install
 
 # Install Bird UI dependency
-docker run -v ../Bird:/home/node/app --rm -w /home/node/app $node npm install
+docker run -v Bird:/home/node/app --rm -w /home/node/app $node npm install
 
 # Build Bird UI
-docker run -v ../Bird:/home/node/app --rm -w /home/node/app $node npm run production
+docker run -v Bird:/home/node/app --rm -w /home/node/app $node npm run production
 
 # Start Bird project
 docker-compose up -d
