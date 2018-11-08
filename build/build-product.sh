@@ -12,13 +12,13 @@ docker pull $node
 
 # Build Bird project
 
-docker run -v ./Bird:/app --rm $composer composer install
+docker run -v Bird:/app --rm $composer composer install
 
 # Install Bird UI dependency
-docker run -v ./Bird:/home/node/app --rm -w /home/node/app $node npm install
+docker run -v Bird:/home/node/app --rm -w /home/node/app $node npm install
 
 # Build Bird UI
-docker run -v ./Bird:/home/node/app --rm -w /home/node/app $node npm run production
+docker run -v Bird:/home/node/app --rm -w /home/node/app $node npm run production
 
 # Start Bird project
 docker-compose up -d
