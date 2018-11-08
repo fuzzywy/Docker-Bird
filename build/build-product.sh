@@ -25,7 +25,7 @@ docker run -v $prj:/home/node/app --rm -w /home/node/app $node npm install
 docker run -v $prj:/home/node/app --rm -w /home/node/app $node npm run production
 
 # Start php-apache image
-docker run --name php-apache php-apache/genius 
+docker run -d --name php-apache php-apache/genius 
 
 # Copy project into docker container
 cd $prj && docker cp . php-apache:/var/www/html
