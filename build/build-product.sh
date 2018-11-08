@@ -1,6 +1,7 @@
 #!/bin/sh
 node=node:10.7.0-stretch
 composer=composer
+prj=$PWD/Bird
 
 git clone https://eDeploy:ehub1234@github.com/fuzzywy/Bird.git
 
@@ -12,13 +13,13 @@ docker pull $node
 
 # Build Bird project
 
-docker run -v $PWD/Bird:/app --rm $composer composer install
+docker run -v $prj:/app --rm $composer composer install
 
 # Install Bird UI dependency
-docker run -v $PWD/Bird:/home/node/app --rm -w /home/node/app $node npm install
+docker run -v $prj:/home/node/app --rm -w /home/node/app $node npm install
 
 # Build Bird UI
-docker run -v $PWD/Bird:/home/node/app --rm -w /home/node/app $node npm run production
+docker run -v $prjBird:/home/node/app --rm -w /home/node/app $node npm run production
 
 # Start Bird project
 docker-compose up -d
@@ -33,7 +34,7 @@ docker exec php-apache cp .env.example .env
 docker exec php-apache php artisan key:generate
 
 # Copy project into docker container
-cd Bird && docker cp . php-apache:/var/www/html
+cd $prj && docker cp . php-apache:/var/www/html
 
 # Commit container to image
 docker commit php-apache php-apache/genius
@@ -42,5 +43,6 @@ docker commit php-apache php-apache/genius
 docker-compose stop
 
 # Remove src dir
-rm -rf $PWD/Bird
+rm -rf $prj
+
 # Push image to docker registry
