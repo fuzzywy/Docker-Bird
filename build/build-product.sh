@@ -2,7 +2,7 @@
 node=node:10.7.0-stretch
 composer=composer
 
-git clone https://github.com/fuzzywy/Bird.git
+git clone https://eDeploy:ehub1234@github.com/fuzzywy/Bird.git
 
 docker-compose build
 
