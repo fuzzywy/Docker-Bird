@@ -2,6 +2,7 @@
 node=node:10.7.0-stretch
 composer=composer
 prj=$PWD/Bird
+ftp=/var/ftp/pub/Bird
 
 # Pull source code
 git clone https://eDeploy:ehub1234@github.com/fuzzywy/Bird.git
@@ -48,4 +49,14 @@ docker commit php-apache php-apache/genius
 # Remove src dir
 rm -rf $prj
 
-# Push image to docker registry
+# Push php-apache image to docker registry
+docker tag php-apache/genius localhost:5000/php-apache/genius
+docker push localhost:5000/php-apache/genius
+
+# Push mariadb image to docker registry
+docker tag mariadb/genius localhost:5000/php-apache/genius
+docker push localhost:5000/php-apache/genius
+
+# Create image tar file
+docker image save -o $ftp/php-apache.tar
+docker image save -o $ftp/mariadb.tar
