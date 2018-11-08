@@ -36,11 +36,11 @@ docker exec php-apache php artisan key:generate
 # Copy project into docker container
 cd $prj && docker cp . php-apache:/var/www/html
 
-# Commit container to image
-docker commit php-apache php-apache/genius
-
 # Stop container
 docker-compose stop
+
+# Commit container to image
+docker commit php-apache php-apache/genius
 
 # Remove src dir
 rm -rf $prj
