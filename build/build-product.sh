@@ -49,6 +49,9 @@ docker commit php-apache php-apache/genius
 # Remove src dir
 rm -rf $prj
 
+# Remove container
+docker container rm php-apache
+
 # Push php-apache image to docker registry
 docker tag php-apache/genius localhost:5000/php-apache/genius
 docker push localhost:5000/php-apache/genius
