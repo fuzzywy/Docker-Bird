@@ -22,7 +22,7 @@ docker run -v $prj:/app --rm $composer composer install
 docker run -v $prj:/home/node/app --rm -w /home/node/app $node npm install
 
 # Build Bird UI
-docker run -v $prj/Bird:/home/node/app --rm -w /home/node/app $node npm run production
+docker run -v $prj:/home/node/app --rm -w /home/node/app $node npm run production
 
 # Start php-apache image
 docker run --name php-apache php-apache/genius 
