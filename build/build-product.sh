@@ -42,8 +42,5 @@ docker commit php-apache php-apache/genius
 docker-compose stop
 
 # Remove src dir
-rm -rf Bird
-
-# Push image to reigstry
-
+rm -rf $PWD/Bird
 # Push image to docker registry
