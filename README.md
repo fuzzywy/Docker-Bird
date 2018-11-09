@@ -63,3 +63,5 @@ e.g.: default docker path:`/data/gdata/docker`, insecure-registries: `47.99.129.
 Download [docker-compose](https://pan.baidu.com/s/1k-vv1qUXma494XovLDlAiA)(PW: eew5) first.
 
 Put it under `/usr/local/bin`，and set its permissions appropriately.
+
+# Test
