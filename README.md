@@ -64,4 +64,4 @@ Download [docker-compose](https://pan.baidu.com/s/1k-vv1qUXma494XovLDlAiA)(PW: e
 
 Put it under `/usr/local/bin`，and set its permissions appropriately.
 
-# Test gerrit 2
+# Test gerrit 3
