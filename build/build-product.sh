@@ -57,8 +57,8 @@ docker tag php-apache/genius localhost:5000/php-apache/genius
 docker push localhost:5000/php-apache/genius
 
 # Push mariadb image to docker registry
-docker tag mariadb/genius localhost:5000/php-apache/genius
-docker push localhost:5000/php-apache/genius
+docker tag mariadb/genius localhost:5000/mariadb/genius
+docker push localhost:5000/mariadb/genius
 
 # Create image tar file
 docker image save -o $ftp/php-apache.tar php-apache/genius
