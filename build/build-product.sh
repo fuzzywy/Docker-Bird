@@ -1,6 +1,6 @@
 #!/bin/sh
 node=node:10.7.0-stretch
-composer=composer
+composer=localhost:5000/composer/bird
 prj=$PWD/Bird
 ftp=/var/ftp/pub/Bird
 
@@ -53,6 +53,7 @@ rm -rf $prj
 docker container rm php-apache
 
 # Push php-apache image to docker registry
+docker rmi localhost:5000/php-apache/genius
 docker tag php-apache/genius localhost:5000/php-apache/genius
 docker push localhost:5000/php-apache/genius
 
