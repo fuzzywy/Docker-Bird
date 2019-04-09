@@ -2,6 +2,8 @@ FROM php:7.2.8-apache-stretch
 
 COPY ./conf/php.ini-development /usr/local/etc/php/php.ini
 
+COPY ./conf/000-default.conf /etc/apache2/sites-available/000-default.conf
+
 # enable rewrite.load
 RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
 
