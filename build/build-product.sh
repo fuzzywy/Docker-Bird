@@ -1,6 +1,6 @@
 #!/bin/sh
 node=node:10.7.0-stretch
-composer=localhost:5000/composer/bird
+composer=composer
 prj=$PWD/Bird
 ftp=/var/ftp/pub/Bird
 
